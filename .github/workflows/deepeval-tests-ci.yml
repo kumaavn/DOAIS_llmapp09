@@ -61,24 +61,40 @@ jobs:
         working-directory: deepeval-tests
         continue-on-error: true
 
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          OLLAMA_BASE_URL: ${{ secrets.OLLAMA_BASE_URL }}
         run: deepeval test run test_classify.py -v
 
       - name: Run DeepEval sentiment tests
         working-directory: deepeval-tests
         continue-on-error: true
 
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          OLLAMA_BASE_URL: ${{ secrets.OLLAMA_BASE_URL }}
         run: deepeval test run test_sentiment.py -v
 
       - name: Run DeepEval summarize tests
         working-directory: deepeval-tests
         continue-on-error: true
 
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          OLLAMA_BASE_URL: ${{ secrets.OLLAMA_BASE_URL }}
         run: deepeval test run test_summarize.py -v
 
       - name: Run DeepEval intent tests
         working-directory: deepeval-tests
         continue-on-error: true
 
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          OLLAMA_BASE_URL: ${{ secrets.OLLAMA_BASE_URL }}
         run: deepeval test run test_intent.py -v
 
       - name: Tear down backend
