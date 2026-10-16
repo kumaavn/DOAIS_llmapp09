@@ -1,7 +1,7 @@
 import json
 import statistics
 import threading
-from datetime import datetime, timezone, UTC
+from datetime import UTC, datetime
 from pathlib import Path
 
 METRICS_DIR = Path(__file__).resolve().parent.parent.parent / "metrics"
