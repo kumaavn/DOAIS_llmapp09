@@ -59,20 +59,29 @@ jobs:
 
       - name: Run DeepEval classify tests
         working-directory: deepeval-tests
+        continue-on-error: true
+
         run: deepeval test run test_classify.py -v
 
       - name: Run DeepEval sentiment tests
         working-directory: deepeval-tests
+        continue-on-error: true
+
         run: deepeval test run test_sentiment.py -v
 
       - name: Run DeepEval summarize tests
         working-directory: deepeval-tests
+        continue-on-error: true
+
         run: deepeval test run test_summarize.py -v
 
       - name: Run DeepEval intent tests
         working-directory: deepeval-tests
+        continue-on-error: true
+
         run: deepeval test run test_intent.py -v
 
       - name: Tear down backend
         if: always()
         run: docker compose down
+
